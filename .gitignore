@@ -1,0 +1,65 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+build/
+captures/
+
+# Local configuration file (sdk path, etc)
+local.properties
+gradle.properties
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Eclipse project files
+#.classpath # I see it's useful really and shouldn't be ignored
+#.project   # I see it's useful really and shouldn't be ignored
+.settings
+
+# IDEA/Android Studio project files, because
+# the project can be imported from settings.gradle
+.idea
+*.iml
+
+# Old-style IDEA project files
+*.ipr
+*.iws
+
+# Local IDEA workspace
+.idea/workspace.xml
+
+# Gradle cache
+.gradle
+
+# Sandbox stuff
+_sandbox
+
+# Crashlytics stuff
+crashlytics.properties
+crashlytics-build.properties
+com_crashlytics_export_strings.xml
+
+# other stuff
+/.idea/libraries
+/.idea/modules.xml
+/.idea/assetWizardSettings.xml
+/.idea/caches
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.externalNativeBuild
+**/coverage
