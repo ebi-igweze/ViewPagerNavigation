@@ -5,10 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
     <TextView
+        android:id="@+id/book_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Privacy Settings Fragment"
+        android:text="Book Fragment"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
