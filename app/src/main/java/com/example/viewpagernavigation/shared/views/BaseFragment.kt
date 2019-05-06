@@ -22,6 +22,17 @@ class BaseFragment: Fragment() {
     private var navHostId: Int = -1
     private val appBarConfig = AppBarConfiguration(rootDestinations)
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            layoutRes = it.getInt(KEY_LAYOUT)
+            toolbarId = it.getInt(KEY_TOOLBAR)
+            navHostId = it.getInt(KEY_NAV_HOST)
+
+        } ?: return
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return if (layoutRes == defaultInt) null
