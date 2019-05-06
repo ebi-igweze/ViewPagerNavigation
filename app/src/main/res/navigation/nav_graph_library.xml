@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/library_dest"
-        android:name="com.example.viewpagernavigation.modules.chats.LibraryFragment"
+        android:name="com.example.viewpagernavigation.modules.library.LibraryFragment"
         android:label="Library">
         <action
             android:id="@+id/action_chat"
@@ -13,7 +13,7 @@
     </fragment>
     <fragment
         android:id="@+id/book_dest"
-        android:name="com.example.viewpagernavigation.modules.chats.BookFragment"
+        android:name="com.example.viewpagernavigation.modules.library.BookFragment"
         android:label="Book" />
     <action
         android:id="@+id/action_clear_stack"

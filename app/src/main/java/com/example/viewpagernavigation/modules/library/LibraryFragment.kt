@@ -1,4 +1,4 @@
-package com.example.viewpagernavigation.modules.chats
+package com.example.viewpagernavigation.modules.library
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,7 +13,7 @@ class LibraryFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_library, container, false)
     }
 
 

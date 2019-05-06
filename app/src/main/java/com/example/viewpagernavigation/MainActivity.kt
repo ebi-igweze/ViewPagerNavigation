@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity(),
         // setup main view pager
         main_pager.adapter = ViewPagerAdapter()
 
+        // set bottom nav
+        bottom_nav.setOnNavigationItemSelectedListener(this)
+        bottom_nav.setOnNavigationItemReselectedListener(this)
+
     }
 
     /// BottomNavigationView ItemSelected Implementation
@@ -76,8 +80,6 @@ class MainActivity : AppCompatActivity(),
         val itemId = indexToPage[page] ?: R.id.home
         if (bottom_nav.selectedItemId != itemId) bottom_nav.selectedItemId = itemId
     }
-
-    fun gotoNowPlaying() = setItem(2)
 
     private fun setItem(position: Int) {
         main_pager.currentItem = position
