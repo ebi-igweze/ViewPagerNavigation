@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_chats"
+    app:startDestination="@id/library_dest">
+
+    <fragment
+        android:id="@+id/library_dest"
+        android:name="com.example.viewpagernavigation.modules.chats.LibraryFragment"
+        android:label="Library">
+        <action
+            android:id="@+id/action_chat"
+            app:destination="@id/book_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/book_dest"
+        android:name="com.example.viewpagernavigation.modules.chats.BookFragment"
+        android:label="Book" />
+</navigation>

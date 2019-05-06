@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_settings"
+    app:startDestination="@id/settings_dest">
+
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.example.viewpagernavigation.modules.settings.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_profile_settings"
+            app:destination="@id/profile_settings_dest" />
+        <action
+            android:id="@+id/action_privacy_settings"
+            app:destination="@id/privacy_settings_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacy_settings_dest"
+        android:name="com.example.viewpagernavigation.modules.settings.PrivacySettingsFragment"
+        android:label="Privacy Settings" />
+    <fragment
+        android:id="@+id/profile_settings_dest"
+        android:name="com.example.viewpagernavigation.modules.settings.ProfileSettingsFragment"
+        android:label="Profile Settings" />
+</navigation>
