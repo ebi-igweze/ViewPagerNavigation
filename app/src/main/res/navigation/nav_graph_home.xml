@@ -18,4 +18,7 @@
         android:id="@+id/search_dest"
         android:name="com.example.viewpagernavigation.modules.home.SearchFragment"
         android:label="Search" />
+    <action
+        android:id="@+id/action_clear_stack"
+        app:popUpTo="@id/nav_home" />
 </navigation>

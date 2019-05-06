@@ -6,11 +6,11 @@
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/rooms"
+        android:id="@+id/library"
         android:icon="@drawable/ic_library"
         android:title="@string/title_library" />
     <item
-        android:id="@+id/playing"
+        android:id="@+id/settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/title_settings" />
 

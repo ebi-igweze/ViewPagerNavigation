@@ -12,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
+import com.example.viewpagernavigation.R
 import com.example.viewpagernavigation.shared.utility.rootDestinations
 
 class BaseFragment: Fragment() {
@@ -55,6 +56,12 @@ class BaseFragment: Fragment() {
         return requireActivity()
                 .findNavController(navHostId)
                 .navigateUp(appBarConfig)
+    }
+
+
+    fun popToRoot() {
+        val navController = requireActivity().findNavController(navHostId)
+        navController.navigate(R.id.action_clear_stack)
     }
 
     companion object {
