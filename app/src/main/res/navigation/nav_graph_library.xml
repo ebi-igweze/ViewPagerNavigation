@@ -8,7 +8,7 @@
         android:name="com.example.viewpagernavigation.modules.library.LibraryFragment"
         android:label="Library">
         <action
-            android:id="@+id/action_chat"
+            android:id="@+id/action_read"
             app:destination="@id/book_dest" />
     </fragment>
     <fragment
