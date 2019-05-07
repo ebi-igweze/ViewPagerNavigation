@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity(),
         bottom_nav.setOnNavigationItemSelectedListener(this)
         bottom_nav.setOnNavigationItemReselectedListener(this)
 
+        // initialize backStack with elements
+        if (backStack.empty()) backStack.push(0)
     }
 
     /// BottomNavigationView ItemSelected Implementation
@@ -92,7 +94,7 @@ class MainActivity : AppCompatActivity(),
     private fun checkDeepLink() {
         fragments.forEachIndexed { index, fragment ->
             val hasDeepLink = fragment.handleDeepLink(intent)
-            if (hasDeepLink) main_pager.currentItem = index
+            if (hasDeepLink) setItem(index)
         }
     }
 

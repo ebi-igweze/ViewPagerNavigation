@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_chats"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph_library"
     app:startDestination="@id/library_dest">
 
     <fragment
@@ -14,11 +14,12 @@
     <fragment
         android:id="@+id/book_dest"
         android:name="com.example.viewpagernavigation.modules.library.BookFragment"
-        android:label="Book" />
+        android:label="Book">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.nav.viewpager.com/{title}/{date}" />
+    </fragment>
     <action
         android:id="@+id/action_clear_stack"
-        app:popUpTo="@id/nav_chats" />
-    <deepLink
-        android:id="@+id/deepLink"
-        app:uri="www.nav.viewpager.com/{title}/{version}" />
+        app:popUpTo="@id/nav_graph_library" />
 </navigation>
