@@ -18,4 +18,7 @@
     <action
         android:id="@+id/action_clear_stack"
         app:popUpTo="@id/nav_chats" />
+    <deepLink
+        android:id="@+id/deepLink"
+        app:uri="www.nav.viewpager.com/{title}/{version}" />
 </navigation>

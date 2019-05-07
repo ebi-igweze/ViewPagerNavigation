@@ -35,7 +35,10 @@ class MainActivity : AppCompatActivity(),
         setContentView(R.layout.activity_main)
 
         // setup main view pager
+        main_pager.addOnPageChangeListener(this)
         main_pager.adapter = ViewPagerAdapter()
+        main_pager.post(this::checkDeepLink)
+        main_pager.offscreenPageLimit = fragments.size
 
         // set bottom nav
         bottom_nav.setOnNavigationItemSelectedListener(this)
@@ -84,6 +87,13 @@ class MainActivity : AppCompatActivity(),
     private fun setItem(position: Int) {
         main_pager.currentItem = position
         backStack.push(position)
+    }
+
+    private fun checkDeepLink() {
+        fragments.forEachIndexed { index, fragment ->
+            val hasDeepLink = fragment.handleDeepLink(intent)
+            if (hasDeepLink) main_pager.currentItem = index
+        }
     }
 
     inner class ViewPagerAdapter : FragmentPagerAdapter(supportFragmentManager) {

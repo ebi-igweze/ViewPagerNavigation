@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.viewpagernavigation.R
+import com.example.viewpagernavigation.modules.library.BookFragment.Companion.KEY_DATE
+import com.example.viewpagernavigation.modules.library.BookFragment.Companion.KEY_TITLE
 import kotlinx.android.synthetic.main.fragment_library.*
 
 class LibraryFragment : Fragment() {
@@ -23,18 +25,12 @@ class LibraryFragment : Fragment() {
 
         awesome_book.setOnClickListener {
             val bundle = Bundle().apply {
-                putString("title", "Winds of Winter")
-                putString("page", "3,047")
+                putString(KEY_TITLE, "Winds of Winter")
+                putString(KEY_DATE, "2018")
             }
 
             findNavController().navigate(R.id.action_read, bundle)
         }
     }
 
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = LibraryFragment()
-    }
 }

@@ -12,14 +12,14 @@ import kotlinx.android.synthetic.main.fragment_book.*
 class BookFragment : Fragment() {
 
     private lateinit var bookTitle: String
-    private lateinit var bookPageCount: String
+    private lateinit var bookPublishDate: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         arguments?.apply {
-            bookTitle = getString("title")
-            bookPageCount = getString("page")
+            bookTitle = getString(KEY_TITLE)
+            bookPublishDate = getString(KEY_DATE)
         }
     }
 
@@ -34,14 +34,16 @@ class BookFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         book_title.text = bookTitle
-        book_page_count.text = bookPageCount
+        book_publish_date.text = bookPublishDate
     }
+
 
 
     companion object {
 
+        const val KEY_TITLE = "title"
+        const val KEY_DATE = "date"
 
-        @JvmStatic
-        fun newInstance() = BookFragment()
     }
+
 }

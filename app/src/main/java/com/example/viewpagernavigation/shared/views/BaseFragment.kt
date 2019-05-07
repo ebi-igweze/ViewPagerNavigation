@@ -1,6 +1,7 @@
 package com.example.viewpagernavigation.shared.views
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.SyncStateContract
 import android.support.v4.app.Fragment
@@ -63,6 +64,9 @@ class BaseFragment: Fragment() {
         val navController = requireActivity().findNavController(navHostId)
         navController.navigate(R.id.action_clear_stack)
     }
+
+    fun handleDeepLink(intent: Intent) = requireActivity().findNavController(navHostId).handleDeepLink(intent)
+
 
     companion object {
 

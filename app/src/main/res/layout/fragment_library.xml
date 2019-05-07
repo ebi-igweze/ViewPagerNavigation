@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="pg: 3,047"
+            android:text="2018"
             app:layout_constraintTop_toBottomOf="@id/roomName"
             app:layout_constraintStart_toStartOf="parent"
             />
