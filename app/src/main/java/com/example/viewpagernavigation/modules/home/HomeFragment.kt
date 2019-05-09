@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
 import com.example.viewpagernavigation.R
+import com.example.viewpagernavigation.shared.utility.HandleNotifications
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -27,6 +29,11 @@ class HomeFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btn_notify.setOnClickListener { HandleNotifications.showNotification(requireContext()) }
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
