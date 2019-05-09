@@ -8,10 +8,13 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import android.support.v4.app.NotificationCompat
 import android.support.v4.app.NotificationManagerCompat
+import androidx.navigation.NavDeepLinkBuilder
 import com.example.viewpagernavigation.MainActivity
 import com.example.viewpagernavigation.R
+import com.example.viewpagernavigation.modules.library.BookFragment
 import java.util.*
 
 
@@ -33,9 +36,16 @@ object HandleNotifications {
     }
 
     private fun getIntent(context: Context): PendingIntent {
-        val intent = Intent(context, MainActivity::class.java)
+        val bundle = Bundle().apply {
+            putString(BookFragment.KEY_TITLE, "Game of Thrones: The short night")
+            putString(BookFragment.KEY_DATE, "2019")
+        }
 
-        return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        return NavDeepLinkBuilder(context)
+                .setGraph(R.navigation.nav_graph_library)
+                .setDestination(R.id.book_dest)
+                .setArguments(bundle)
+                .createPendingIntent()
     }
 
     private fun getNotification(context: Context, channelId: String): NotificationCompat.Builder {
@@ -43,7 +53,7 @@ object HandleNotifications {
         // Create Pending Intents.
         val piLaunchMainActivity = getIntent(context)
 
-        return  NotificationCompat.Builder(context,  channelId)
+        return NotificationCompat.Builder(context, channelId)
                 .setContentTitle("Game of Thrones")
                 .setContentText("The short night")
                 .setStyle(NotificationCompat.BigTextStyle())
