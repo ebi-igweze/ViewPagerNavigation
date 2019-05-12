@@ -46,10 +46,4 @@ class HomeFragment : Fragment() {
         else super.onOptionsItemSelected(item)
     }
 
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = HomeFragment()
-    }
 }

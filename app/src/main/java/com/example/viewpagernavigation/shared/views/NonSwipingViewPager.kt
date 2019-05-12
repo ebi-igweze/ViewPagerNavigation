@@ -28,7 +28,6 @@ class NonSwipingViewPager : ViewPager {
         return false
     }
 
-    //down one is added for smooth scrolling
     private fun setMyScroller() {
         try {
             val viewpager = ViewPager::class.java
@@ -44,7 +43,7 @@ class NonSwipingViewPager : ViewPager {
     inner class MyScroller(context: Context) : Scroller(context, DecelerateInterpolator()) {
 
         override fun startScroll(startX: Int, startY: Int, dx: Int, dy: Int, duration: Int) {
-            super.startScroll(startX, startY, dx, dy, 0 /*1 secs*/)
+            super.startScroll(startX, startY, dx, dy, 0 /* secs */)
         }
     }
 }
