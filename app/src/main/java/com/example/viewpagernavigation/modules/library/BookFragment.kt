@@ -18,8 +18,8 @@ class BookFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         arguments?.apply {
-            bookTitle = getString(KEY_TITLE)
-            bookPublishDate = getString(KEY_DATE)
+            bookTitle = getString(KEY_TITLE, "")
+            bookPublishDate = getString(KEY_DATE, "")
         }
     }
 
