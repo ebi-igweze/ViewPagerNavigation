@@ -1,9 +1,9 @@
 package com.example.viewpagernavigation.shared.views
 
 
+
 import android.content.Intent
 import android.os.Bundle
-import android.provider.SyncStateContract
 import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
@@ -13,7 +13,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
-import com.example.viewpagernavigation.R
 import com.example.viewpagernavigation.shared.utility.rootDestinations
 
 class BaseFragment: Fragment() {
@@ -62,7 +61,7 @@ class BaseFragment: Fragment() {
 
     fun popToRoot() {
         val navController = requireActivity().findNavController(navHostId)
-        navController.navigate(R.id.action_clear_stack)
+        navController.popBackStack(navController.graph.startDestination, false)
     }
 
     fun handleDeepLink(intent: Intent) = requireActivity().findNavController(navHostId).handleDeepLink(intent)

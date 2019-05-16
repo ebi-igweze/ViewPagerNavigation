@@ -19,7 +19,4 @@
             android:id="@+id/deepLink"
             app:uri="www.nav.viewpager.com/{title}/{date}" />
     </fragment>
-    <action
-        android:id="@+id/action_clear_stack"
-        app:popUpTo="@id/nav_graph_library" />
 </navigation>
