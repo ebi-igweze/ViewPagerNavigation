@@ -30,11 +30,4 @@ class SettingsFragment : Fragment() {
             findNavController().navigate(R.id.action_profile_settings)
         }
     }
-
-    companion object {
-
-
-        @JvmStatic
-        fun newInstance() = SettingsFragment()
-    }
 }
