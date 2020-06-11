@@ -2,8 +2,8 @@ package com.example.viewpagernavigation.modules.home
 
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.appcompat.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -35,8 +35,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btn_notify.setOnClickListener { HandleNotifications.showNotification(requireContext()) }
     }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val destination = when (item?.itemId) {
             R.id.search -> R.id.action_search
             else -> null
